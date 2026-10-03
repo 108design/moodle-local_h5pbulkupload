@@ -30,6 +30,4 @@ target courses.
 
 ## License
 
-108design H5P Bulk Upload Software License. This is a source-available commercial
-software license, not an open-source license. See [LICENSE.md](LICENSE.md) for
-the full terms.
+This is a 108design source-available commercial software license, not an open-source license. See [LICENSE.md](https://github.com/108design/moodle-local_h5pbulkupload/blob/main/LICENSE.md) for the full terms.
