@@ -7,10 +7,20 @@
 // with this distribution. Redistribution and circumvention of Pro feature or
 // licensing restrictions are prohibited. See LICENSE.md for the full terms.
 
+/**
+ * Plugin version and compatibility metadata.
+ *
+ * @package    local_h5pbulkupload
+ * @copyright  2026 Andreas Giesen <andreas@108design.com>
+ * @license    See LICENSE.md for the full terms.
+ */
+
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_h5pbulkupload';
-$plugin->version = 2026081903;
+$plugin->version = 2026100500;
 $plugin->requires = 2024100700;
-$plugin->maturity = MATURITY_ALPHA;
-$plugin->release = '0.1.3';
+$plugin->maturity = MATURITY_STABLE;
+$plugin->release = '1.0.0';
+$plugin->supported = [405, 502];
+$plugin->dependencies = ['contenttype_h5p' => 2024100700];

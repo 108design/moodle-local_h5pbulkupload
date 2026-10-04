@@ -7,6 +7,14 @@
 // with this distribution. Redistribution and circumvention of Pro feature or
 // licensing restrictions are prohibited. See LICENSE.md for the full terms.
 
+/**
+ * English language strings.
+ *
+ * @package    local_h5pbulkupload
+ * @copyright  2026 Andreas Giesen <andreas@108design.com>
+ * @license    See LICENSE.md for the full terms.
+ */
+
 $string['contentbanklink'] = 'Open the content bank';
 $string['course'] = 'Target course';
 $string['courseoption'] = '{$a->fullname} ({$a->shortname}, ID {$a->id})';
@@ -18,21 +26,26 @@ $string['errormissingpermissions'] = 'You do not have all permissions required t
 $string['filename'] = 'File';
 $string['h5pbulkupload:upload'] = 'Upload multiple H5P files to content banks';
 $string['import'] = 'Upload H5P files';
+$string['importbusy'] = 'Another bulk import is running in this course. Please try again shortly.';
+$string['importerror'] = 'The file could not be imported. Check the server logs or contact your administrator.';
 $string['importfailed'] = '{$a->failed} of {$a->total} files could not be imported.';
 $string['importpartial'] = '{$a->success} of {$a->total} files were imported; {$a->skipped} were skipped and {$a->failed} failed.';
 $string['importsuccess'] = 'All {$a} H5P files were imported successfully.';
 $string['invalidcourse'] = 'Select a valid, visible target course.';
+$string['invaliddraftfile'] = 'Only files from your own upload draft area can be imported.';
 $string['invalidfiletype'] = 'Only .h5p files can be imported.';
+$string['invalidpackage'] = 'This file is not a valid, available H5P package.';
 $string['nofiles'] = 'No files were submitted.';
 $string['open'] = 'Open';
 $string['packages'] = 'H5P files';
 $string['packages_help'] = 'Drag multiple .h5p files into this field or select them using the file picker.';
-$string['pluginname'] = 'H5P bulk upload';
-$string['privacy:metadata'] = 'The H5P bulk upload plugin does not store personal data of its own. Imported content is stored by Moodle\'s content bank.';
+$string['pluginname'] = 'h5p Bulk Upload';
+$string['privacy:metadata'] = 'The h5p Bulk Upload plugin does not store personal data of its own. Imported content is stored by Moodle\'s content bank.';
 $string['result'] = 'Result';
 $string['skipduplicates'] = 'Skip files with an existing name';
 $string['skipduplicates_help'] = 'If enabled, a file is not imported when an H5P content item with the exact same file name already exists in the target course.';
 $string['skipped'] = 'Skipped';
 $string['status'] = 'Status';
 $string['success'] = 'Imported';
+$string['toomanyfiles'] = 'Upload no more than {$a} files at a time.';
 $string['uploadintro'] = 'Select a target course and add all H5P files that should be imported into its content bank. No course activities will be created.';

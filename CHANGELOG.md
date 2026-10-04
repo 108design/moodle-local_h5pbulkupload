@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.0 - 2026-10-05
+
+- Stable release for Moodle 4.5–5.2.
+- Display name is exactly `h5p Bulk Upload` in English and German.
+- Rechecks target-course visibility, native permissions and enabled H5P content type at import time.
+- Restricts imports to the current user's draft files and enforces the 100-file limit server-side.
+- Serializes bulk imports per course to protect duplicate-name detection.
+- Reports H5P validation errors per file before creating content records.
+- Adds native import, permission and validation regression tests, including PostgreSQL.
+
 ## 0.1.3 - 2026-08-19
 
 - Limits the target-course selector to visible courses.

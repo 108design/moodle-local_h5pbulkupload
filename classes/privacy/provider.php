@@ -9,6 +9,8 @@
 
 namespace local_h5pbulkupload\privacy;
 
+defined('MOODLE_INTERNAL') || die();
+
 /**
  * Privacy provider for the H5P bulk upload plugin.
  *
@@ -26,4 +28,3 @@ class provider implements \core_privacy\local\metadata\null_provider {
         return 'privacy:metadata';
     }
 }
-

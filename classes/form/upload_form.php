@@ -62,31 +62,13 @@ class upload_form extends \moodleform {
      * @return array Validation errors.
      */
     public function validation($data, $files): array {
-        global $DB, $USER;
+        global $USER;
 
         $errors = parent::validation($data, $files);
         $courseid = (int)($data['courseid'] ?? 0);
 
-        if (!$courseid || !$DB->record_exists('course', ['id' => $courseid, 'visible' => 1])) {
-            $errors['courseid'] = get_string('invalidcourse', 'local_h5pbulkupload');
-        } else if (!class_exists('\\contenttype_h5p\\contenttype')) {
-            $errors['courseid'] = get_string('errormissingcontenttype', 'local_h5pbulkupload');
-        } else {
-            $context = \context_course::instance($courseid);
-            $requiredcapabilities = [
-                'moodle/contentbank:access',
-                'moodle/contentbank:upload',
-                'contenttype/h5p:access',
-                'contenttype/h5p:upload',
-            ];
-            if (!has_all_capabilities($requiredcapabilities, $context)) {
-                $errors['courseid'] = get_string('errormissingpermissions', 'local_h5pbulkupload');
-            } else {
-                $contenttype = new \contenttype_h5p\contenttype($context);
-                if (!$contenttype->can_upload()) {
-                    $errors['courseid'] = get_string('errormissingcontenttype', 'local_h5pbulkupload');
-                }
-            }
+        if ($error = \local_h5pbulkupload\local\target_course::get_error($courseid)) {
+            $errors['courseid'] = get_string($error, 'local_h5pbulkupload');
         }
 
         $draftitemid = (int)($data['packages'] ?? 0);
@@ -101,6 +83,8 @@ class upload_form extends \moodleform {
         );
         if (!$draftfiles) {
             $errors['packages'] = get_string('errormissingfiles', 'local_h5pbulkupload');
+        } else if (count($draftfiles) > \local_h5pbulkupload\local\importer::MAX_FILES) {
+            $errors['packages'] = get_string('toomanyfiles', 'local_h5pbulkupload', \local_h5pbulkupload\local\importer::MAX_FILES);
         }
 
         return $errors;

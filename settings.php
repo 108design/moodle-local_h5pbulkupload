@@ -7,6 +7,14 @@
 // with this distribution. Redistribution and circumvention of Pro feature or
 // licensing restrictions are prohibited. See LICENSE.md for the full terms.
 
+/**
+ * Administration link for h5p Bulk Upload.
+ *
+ * @package    local_h5pbulkupload
+ * @copyright  2026 Andreas Giesen <andreas@108design.com>
+ * @license    See LICENSE.md for the full terms.
+ */
+
 defined('MOODLE_INTERNAL') || die();
 
 $ADMIN->add('localplugins', new admin_externalpage(

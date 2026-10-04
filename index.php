@@ -7,6 +7,14 @@
 // with this distribution. Redistribution and circumvention of Pro feature or
 // licensing restrictions are prohibited. See LICENSE.md for the full terms.
 
+/**
+ * Bulk H5P upload page.
+ *
+ * @package    local_h5pbulkupload
+ * @copyright  2026 Andreas Giesen <andreas@108design.com>
+ * @license    See LICENSE.md for the full terms.
+ */
+
 require_once(__DIR__ . '/../../config.php');
 require_once($CFG->libdir . '/filelib.php');
 
@@ -21,19 +29,13 @@ $PAGE->set_pagelayout('admin');
 $PAGE->set_title(get_string('pluginname', 'local_h5pbulkupload'));
 $PAGE->set_heading(get_string('pluginname', 'local_h5pbulkupload'));
 
-$requiredcapabilities = [
-    'moodle/contentbank:access',
-    'moodle/contentbank:upload',
-    'contenttype/h5p:access',
-    'contenttype/h5p:upload',
-];
 $courseoptions = [];
 foreach (get_courses('all', 'c.fullname ASC', 'c.id,c.fullname,c.shortname,c.visible') as $course) {
-    if ((int)$course->id === SITEID || !$course->visible) {
+    if ((int)$course->id === (int)SITEID || !$course->visible) {
         continue;
     }
     $coursecontext = context_course::instance($course->id);
-    if (!has_all_capabilities($requiredcapabilities, $coursecontext)) {
+    if (\local_h5pbulkupload\local\target_course::get_error($course->id)) {
         continue;
     }
     $labeldata = (object)[
@@ -53,7 +55,7 @@ if (has_capability('moodle/user:ignoreuserquota', $systemcontext)) {
 $fileoptions = [
     'subdirs' => 0,
     'maxbytes' => $maxbytes,
-    'maxfiles' => 100,
+    'maxfiles' => \local_h5pbulkupload\local\importer::MAX_FILES,
     'accepted_types' => ['.h5p'],
     'areamaxbytes' => $maxareabytes,
 ];
@@ -75,10 +77,6 @@ if ($data = $mform->get_data()) {
 
     $course = get_course($data->courseid);
     $coursecontext = context_course::instance($course->id);
-    foreach ($requiredcapabilities as $capability) {
-        require_capability($capability, $coursecontext);
-    }
-
     $usercontext = context_user::instance($USER->id);
     $files = get_file_storage()->get_area_files(
         $usercontext->id,
