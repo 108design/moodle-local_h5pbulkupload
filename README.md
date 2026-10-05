@@ -13,9 +13,6 @@ Supports Moodle 4.5 to 5.2.
 
 ![Select a target course and add H5P files from the central administration page](https://raw.githubusercontent.com/108design/moodle-local_h5pbulkupload/main/docs/screenshots/h5pbu-files.jpg)
 
-All features are permanently free to use. No activation, license key,
-subscription or additional account is required.
-
 ## Features
 
 - **One central upload tool for different courses:** choose the destination
@@ -87,7 +84,6 @@ Moodle versions and the per-file error message, without confidential content.
 
 ## License
 
-All functionality in this distribution is designated as Free Features under
-the license and remains available without payment.
+**This release is available free of charge under the 108design Software License.**
 
-This is a 108design source-available commercial software license, not an open-source license. See [LICENSE.md](https://github.com/108design/moodle-local_h5pbulkupload/blob/main/LICENSE.md) for the full terms.
+See [LICENSE.md](https://github.com/108design/moodle-local_h5pbulkupload/blob/main/LICENSE.md) for the full terms.
