@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/108design/moodle-local_h5pbulkupload/main/docs/branding/logo.svg" alt="h5p Bulk Upload logo" width="443" height="443">
+</p>
+
 # h5p Bulk Upload
 
 Upload `.h5p` files in bulk from **one central administration page** and
