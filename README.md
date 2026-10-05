@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/108design/moodle-local_h5pbulkupload/main/docs/branding/logo.svg" alt="h5p Bulk Upload logo" width="443" height="443">
+  <img src="https://raw.githubusercontent.com/108design/moodle-local_h5pbulkupload/main/docs/branding/logo.svg" alt="h5p Bulk Upload logo" width="125" height="125">
 </p>
 
 # h5p Bulk Upload
