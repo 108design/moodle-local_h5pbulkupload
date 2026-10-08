@@ -7,7 +7,7 @@
 Upload `.h5p` files in bulk from **one central administration page** and
 distribute your batches across different course content banks. Select the
 target course for each batch, without opening each course separately.
-Supports Moodle 4.5 to 5.2.
+Supports Moodle 4.5 to 5.3.
 
 ## Screenshot
 
@@ -46,7 +46,7 @@ those activities separately in Moodle.
 
 ## Requirements and permissions
 
-- Moodle 4.5, 5.0, 5.1 or 5.2, with its supported PHP and database versions.
+- Moodle 4.5, 5.0, 5.1, 5.2 or 5.3, with its supported PHP and database versions.
 - The core H5P content type must be enabled.
 - The target must be a visible course; the site front page is excluded.
 - Server upload limits and Moodle user file quotas still apply.
