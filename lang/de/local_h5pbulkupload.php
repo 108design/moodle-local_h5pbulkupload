@@ -49,3 +49,12 @@ $string['status'] = 'Status';
 $string['success'] = 'Importiert';
 $string['toomanyfiles'] = 'Bitte höchstens {$a} Dateien gleichzeitig hochladen.';
 $string['uploadintro'] = 'Wählen Sie einen Zielkurs und fügen Sie alle H5P-Dateien hinzu, die in dessen Inhaltsspeicher importiert werden sollen. Es werden keine Kursaktivitäten angelegt.';
+
+// Contextual administration help.
+$string['adminhelp'] = 'Hilfe zur Verwaltung';
+$string['adminhelpmore'] = 'Mehr dazu im Hilfepanel';
+$string['adminhelptopics'] = 'Hilfethemen';
+$string['adminhelp_overview'] = 'H5P-Pakete importieren';
+$string['adminhelp_overview_article'] = '<p>Wähle zuerst den Zielkurs und lade danach die gewünschten H5P-Pakete hoch. Der Import legt Inhalte im Inhaltsspeicher des Kurses an; Kursaktivitäten entstehen dadurch nicht automatisch.</p><p>Du benötigst die passenden Rechte für den Zielkurs. Moodle prüft die Pakete und benötigten H5P-Bibliotheken; nicht unterstützte oder fehlerhafte Dateien können abgelehnt werden.</p>';
+$string['adminhelp_results'] = 'Duplikate und Ergebnisprüfung';
+$string['adminhelp_results_article'] = '<p>Prüfe vor dem Start die gewählte Behandlung von Duplikaten. Zusätzliche Importe ersetzen bestehende Inhalte nicht.</p><p>Kontrolliere anschließend das Ergebnis jeder Datei. Ein fehlgeschlagenes Paket bedeutet nicht, dass alle anderen Dateien ebenfalls fehlgeschlagen sind.</p>';
