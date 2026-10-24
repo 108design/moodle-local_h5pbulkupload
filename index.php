@@ -29,22 +29,8 @@ $PAGE->set_pagelayout('admin');
 $PAGE->set_title(get_string('pluginname', 'local_h5pbulkupload'));
 $PAGE->set_heading(get_string('pluginname', 'local_h5pbulkupload'));
 
-$courseoptions = [];
-foreach (get_courses('all', 'c.fullname ASC', 'c.id,c.fullname,c.shortname,c.visible') as $course) {
-    if ((int)$course->id === (int)SITEID || !$course->visible) {
-        continue;
-    }
-    $coursecontext = context_course::instance($course->id);
-    if (\local_h5pbulkupload\local\target_course::get_error($course->id)) {
-        continue;
-    }
-    $labeldata = (object)[
-        'fullname' => format_string($course->fullname, true, ['context' => $coursecontext]),
-        'shortname' => format_string($course->shortname, true, ['context' => $coursecontext]),
-        'id' => $course->id,
-    ];
-    $courseoptions[$course->id] = get_string('courseoption', 'local_h5pbulkupload', $labeldata);
-}
+$selectedcourseid = optional_param('courseid', 0, PARAM_INT);
+$courseoptions = \local_h5pbulkupload\local\course_selector::selected($selectedcourseid);
 
 $maxbytes = $CFG->userquota;
 $maxareabytes = $CFG->userquota;
@@ -66,7 +52,6 @@ $mform = new \local_h5pbulkupload\form\upload_form(null, [
     'draftitemid' => $draftitemid,
 ]);
 
-$selectedcourseid = optional_param('courseid', 0, PARAM_INT);
 if ($selectedcourseid) {
     $mform->set_data((object)['courseid' => $selectedcourseid]);
 }

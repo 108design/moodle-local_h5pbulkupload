@@ -17,7 +17,7 @@ Supports Moodle 4.5 to 5.3.
 
 - **One central upload tool for different courses:** choose the destination
   course for each batch and import its files directly into that course's content bank.
-- Searchable target-course selector with course IDs.
+- Target-course search by name, short name, ID number or numeric course ID.
 - Multi-file selection and drag and drop, with up to 100 files per batch.
 - Optional protection against duplicate file names, enabled by default.
 - A result for each file, with links to successfully imported content.
@@ -32,7 +32,9 @@ Supports Moodle 4.5 to 5.3.
 
 ## Using the plugin
 
-1. Search for and select the target course.
+1. Enter at least two characters of the course name, short name or ID number,
+   or enter the numeric course ID, then select the target course. Up to 20
+   eligible courses are shown; refine the search if needed.
 2. Drag your `.h5p` files into the file area, or use the file picker.
 3. Leave **Skip files with an existing name** enabled to avoid importing a file
    whose exact name already exists in that course's H5P content bank.

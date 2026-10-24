@@ -26,7 +26,8 @@ class upload_form extends \moodleform {
      */
     public function definition(): void {
         $mform = $this->_form;
-        $courseoptions = $this->_customdata['courseoptions'];
+        // Native select templates render option labels as HTML.
+        $courseoptions = array_map('s', $this->_customdata['courseoptions']);
         $fileoptions = $this->_customdata['fileoptions'];
         $draftitemid = $this->_customdata['draftitemid'];
 
@@ -37,7 +38,10 @@ class upload_form extends \moodleform {
 
         $mform->addElement('autocomplete', 'courseid', get_string('course', 'local_h5pbulkupload'), $courseoptions, [
             'noselectionstring' => get_string('choosedots'),
+            'ajax' => 'local_h5pbulkupload/course_selector',
+            'placeholder' => get_string('coursesearch', 'local_h5pbulkupload'),
         ]);
+        $mform->addHelpButton('courseid', 'course', 'local_h5pbulkupload');
         $mform->addRule('courseid', get_string('required'), 'required', null, 'client');
         $mform->setType('courseid', PARAM_INT);
 
@@ -51,6 +55,13 @@ class upload_form extends \moodleform {
         $mform->setDefault('skipduplicates', 1);
         $mform->setType('skipduplicates', PARAM_BOOL);
 
+        foreach (['courseid' => 'overview', 'packages' => 'overview', 'skipduplicates' => 'results'] as $field => $topic) {
+            $mform->addElement('html', \html_writer::span(
+                \local_h5pbulkupload\local\admin_help::icon($topic),
+                'local-h5pbulkupload-field-help',
+                ['data-h5p-help-field' => $field]
+            ));
+        }
         $this->add_action_buttons(false, get_string('import', 'local_h5pbulkupload'));
     }
 

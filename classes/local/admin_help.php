@@ -1,4 +1,16 @@
 <?php
+/**
+ * This file is part of a 108design source-available software product.
+ *
+ * Use and modification are permitted only under the Software License included
+ * with this distribution. See LICENSE.md for the full terms.
+ *
+ * File documentation for classes/local/admin_help.php.
+ *
+ * @package   local_h5pbulkupload
+ * @copyright 2026 Andreas Giesen
+ * @license   See LICENSE.md for the full terms.
+ */
 // Copyright (C) 2026 Andreas Giesen. See LICENSE.md.
 namespace local_h5pbulkupload\local;
 
@@ -19,6 +31,7 @@ final class admin_help {
         self::$prepared = true;
         $PAGE->requires->css(new \moodle_url('/local/h5pbulkupload/styles/admin_help.css', [
             'rev' => get_config('local_h5pbulkupload', 'version'),
+            'theme' => theme_get_revision(),
         ]));
         $module = (int)$CFG->version < 2025041400 ? 'admin_help_legacy' : 'admin_help';
         $PAGE->requires->js_call_amd('local_h5pbulkupload/admin_help_form', 'init');
@@ -33,9 +46,12 @@ final class admin_help {
         if (!in_array($key, self::TOPICS, true)) {
             throw new \coding_exception('Unknown Administration help topic.');
         }
+        if (defined('CLI_SCRIPT') && CLI_SCRIPT) {
+            return '';
+        }
         $url = new \moodle_url($PAGE->url);
         $url->param('h5pbulkuploadhelp', $key);
-        $help = new \help_icon($key, 'local_h5pbulkupload', $url->out(false));
+        $help = new \help_icon('adminhelp_' . $key, 'local_h5pbulkupload', $url->out(false));
         $renderer = $PAGE->get_renderer('core');
         $data = (array)$help->export_for_template($renderer);
         $data['completedoclink'] = \html_writer::link($url, get_string('adminhelpmore', 'local_h5pbulkupload'));

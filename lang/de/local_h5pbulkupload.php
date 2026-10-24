@@ -58,3 +58,9 @@ $string['adminhelp_overview'] = 'H5P-Pakete importieren';
 $string['adminhelp_overview_article'] = '<p>Wähle zuerst den Zielkurs und lade danach die gewünschten H5P-Pakete hoch. Der Import legt Inhalte im Inhaltsspeicher des Kurses an; Kursaktivitäten entstehen dadurch nicht automatisch.</p><p>Du benötigst die passenden Rechte für den Zielkurs. Moodle prüft die Pakete und benötigten H5P-Bibliotheken; nicht unterstützte oder fehlerhafte Dateien können abgelehnt werden.</p>';
 $string['adminhelp_results'] = 'Duplikate und Ergebnisprüfung';
 $string['adminhelp_results_article'] = '<p>Prüfe vor dem Start die gewählte Behandlung von Duplikaten. Zusätzliche Importe ersetzen bestehende Inhalte nicht.</p><p>Kontrolliere anschließend das Ergebnis jeder Datei. Ein fehlgeschlagenes Paket bedeutet nicht, dass alle anderen Dateien ebenfalls fehlgeschlagen sind.</p>';
+
+$string['coursesearch'] = 'Nach Kursname, Kurzname oder ID suchen';
+$string['course_help'] = 'Gib mindestens zwei Zeichen des Kursnamens, Kurznamens oder der ID-Nummer ein oder suche nach der numerischen Kurs-ID. Angezeigt werden nur sichtbare Kurse, in denen Du H5P-Inhalte hochladen darfst. Es erscheinen bis zu 20 passende Kurse; grenze die Suche bei Bedarf weiter ein.';
+
+$string['adminhelp_overview_help'] = 'Wähle einen berechtigten Zielkurs und füge Deine H5P-Pakete hinzu. Das Hilfepanel erklärt Import und Berechtigungen.';
+$string['adminhelp_results_help'] = 'Der Duplikatschutz vergleicht exakte Dateinamen in der Ziel-Inhaltssammlung. Das Hilfepanel erklärt Ergebnisse und erneute Versuche.';

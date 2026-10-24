@@ -149,3 +149,17 @@ body.local-h5pbulkupload-help-legacy-drawers.local-h5pbulkupload-help-open .draw
     grid-row: 2;
     align-self: center;
 }
+
+/* Keep important linked help beside its native control. */
+.local-h5pbulkupload-control-help {
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+    max-width: 100%;
+}
+.local-h5pbulkupload-control-help > :first-child { flex: 0 1 auto; min-width: 0; }
+.local-h5pbulkupload-control-help .form-autocomplete-input { width: 30rem; max-width: 100%; margin: 0 !important; }
+.local-h5pbulkupload-control-help .form-autocomplete-input input { width: 100%; min-width: 0 !important; max-width: 100%; }
+.local-h5pbulkupload-field-help { display: inline-flex; flex: 0 0 auto; margin-inline-start: .5rem; }
+.local-h5pbulkupload-control-help > .local-h5pbulkupload-field-help { margin-inline-start: 0; padding-top: .5rem; }
+.local-h5pbulkupload-field-help button { margin: 0 !important; }

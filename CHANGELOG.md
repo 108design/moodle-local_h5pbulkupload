@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.3.0 — Unreleased
+
+- Load eligible target courses on demand through Moodle’s native autocomplete and course search.
+- Support exact numeric course IDs and retain server-side visibility, permission and H5P upload checks.
+- Add English and German guidance beside the course selector.
+- Correct the Bootstrap Popover import used by the existing help panel.
+
+## 1.2.0 — 2026-10-17
+
+- Standardize the branded help panel header and include verified AMD source maps.
+
+## 1.1.0 — 2026-10-16
+
+- Add product logos to administration and contextual help.
+
 ## 1.0.2 - 2026-10-08
 
 - Extend declared compatibility to Moodle 5.3 after native plugin checks.
