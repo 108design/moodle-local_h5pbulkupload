@@ -19,9 +19,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_h5pbulkupload';
-$plugin->version = 2026112000;
+$plugin->version = 2026112001;
 $plugin->requires = 2024100700;
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.6.2';
+$plugin->release = '1.6.3';
 $plugin->supported = [405, 503];
 $plugin->dependencies = ['contenttype_h5p' => 2024100700];
