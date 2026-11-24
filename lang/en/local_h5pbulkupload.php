@@ -50,23 +50,17 @@ $string['status'] = 'Status';
 $string['success'] = 'Imported';
 $string['toomanyfiles'] = 'Upload no more than {$a} files at a time.';
 $string['uploadintro'] = 'Select a target course and add all H5P files that should be imported into its content bank. No course activities will be created.';
-
-// Contextual administration help.
 $string['adminhelp'] = 'Administration help';
 $string['adminhelpmore'] = 'More in the help panel';
-$string['adminhelptopics'] = 'Help Topics';
+$string['adminhelptopics'] = 'Help topics';
 $string['adminhelp_overview'] = 'Importing H5P packages';
 $string['adminhelp_overview_article'] = '<p>Select the target course, then upload the H5P packages. Importing creates content in the course content bank; it does not automatically create course activities.</p><p>You need the appropriate permissions in the target course. Moodle validates packages and required H5P libraries; unsupported or invalid files may be rejected.</p>';
 $string['adminhelp_results'] = 'Duplicates and reviewing results';
 $string['adminhelp_results_article'] = '<p>Check the selected duplicate handling before starting. Additional imports do not replace existing content.</p><p>Review the result for each file afterwards. A failed package does not mean that every other file failed too.</p>';
-
 $string['coursesearch'] = 'Search by course name, short name or ID';
 $string['course_help'] = 'Enter at least two characters of the course name, short name or ID number, or enter the numeric course ID. Results include only visible courses where you can upload H5P content. Up to 20 matching courses are shown; refine the search if needed.';
-
 $string['adminhelp_overview_help'] = 'Choose an eligible target course and add your H5P packages. The help panel explains the import and its permissions.';
 $string['adminhelp_results_help'] = 'Duplicate protection compares exact file names in the target content bank. The help panel explains results and retrying files.';
-
-
 $string['updateguard_heading'] = 'Update stopped';
 $string['updateguard_component'] = 'The package for {$a} was rejected.';
 $string['updateguard_hint'] = 'Use an approved package for the installed edition. You can review the operation again.';
@@ -83,8 +77,6 @@ $string['updateguard_installed'] = 'The installed update protection is incomplet
 $string['updateguard_operation'] = 'This combination of installation actions is not supported. Start a single update operation again.';
 $string['updateguard_failed'] = 'The update could not be verified. No installation was started.';
 $string['updateguard_back'] = 'Return to plugin overview';
-
-// Optional information before native package confirmation.
 $string['updateinfo_heading'] = 'Package information: {$a}';
 $string['updateinfo_verified'] = 'The embedded publisher record matches the installed release line.';
 $string['updateinfo_missing'] = 'This package has no embedded publisher verification record.';
