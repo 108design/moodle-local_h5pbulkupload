@@ -210,4 +210,11 @@ body.local-h5pbulkupload-help-legacy-drawers.local-h5pbulkupload-help-open .draw
     font-size: 1.5rem;
     line-height: 1;
 }
+.local-h5pbulkupload-context-help .local-h5pbulkupload-help-close > svg {
+    display: block;
+    flex: 0 0 auto;
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+}
 /* END GENERATED HELP PANEL CONTROLS */
